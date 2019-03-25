@@ -137,7 +137,6 @@ function () {
     key: "print",
     value: function print() {
       //cards
-      var container = document.querySelector("#budapest");
       var description = document.querySelector(".lead");
       var _this$data = this.data,
           currently = _this$data.currently,
@@ -154,8 +153,7 @@ function () {
           sunriseTime = data.sunriseTime,
           sunsetTime = data.sunsetTime,
           moonPhase = data.moonPhase;
-      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(currentlyIcon, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
-      var cards = "<p></p>";
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    <h6>").concat(dailySummary, "</h6>\n    ");
       description.innerHTML = content;
     }
   }]);
@@ -164,7 +162,64 @@ function () {
 }();
 
 var BerlinWeather = new Forecast("52.520008,13.404954");
-var LondonWeather = new Fore();
+
+var Forecast2 =
+/*#__PURE__*/
+function () {
+  function Forecast2(latitude, longitude) {
+    _classCallCheck(this, Forecast2);
+
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.render();
+  }
+
+  _createClass(Forecast2, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var ApiUrl = "https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
+      fetch(ApiUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this2.data = data;
+        console.log(_this2.data);
+
+        _this2.print(data);
+      }).catch(function (err) {
+        return console.log("oh no!! ".concat(err));
+      });
+    }
+  }, {
+    key: "print",
+    value: function print() {
+      //cards
+      var description = document.querySelector("#londoncard");
+      var _this$data2 = this.data,
+          currently = _this$data2.currently,
+          daily = _this$data2.daily;
+      var currentlySummary = currently.summary,
+          currentlyIcon = currently.icon,
+          temperature = currently.temperature,
+          windSpeed = currently.windSpeed;
+      var dailySummary = daily.summary,
+          dailyIcon = daily.icon,
+          data = daily.data;
+      var summary = data.summary,
+          icon = data.icon,
+          sunriseTime = data.sunriseTime,
+          sunsetTime = data.sunsetTime,
+          moonPhase = data.moonPhase;
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(currentlyIcon, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
+      description.innerHTML = content;
+    }
+  }]);
+
+  return Forecast2;
+}();
+
+var LondonWeather = new Forecast2("51.509865", "-0.118092");
 
 /***/ }),
 
