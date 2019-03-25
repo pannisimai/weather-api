@@ -20,10 +20,28 @@ class Forecast {
       .catch(err => console.log(`oh no!! ${err}`));
   }
   print() {
-    let container = document.querySelector(".card-deck");
-    const {summary} = currently;
-    const { currently[summary], } = this.data;
+    //cards
+    let container = document.querySelector("#budapest");
+    let description = document.querySelector(".lead");
+
+    const { currently, daily } = this.data;
+    const {
+      summary: currentlySummary,
+      icon: currentlyIcon,
+      temperature,
+      windSpeed
+    } = currently;
+    const { summary: dailySummary, icon: dailyIcon, data } = daily;
+    const { summary, icon, sunriseTime, sunsetTime, moonPhase } = data;
+
+    const content = `<p>${currentlySummary}</p>
+    <p>${currentlyIcon}</p>
+    <p>${((5 / 9) * (temperature - 32)).toFixed(0)} °C</p>
+    `;
+    const cards = `<p></p>`;
+    description.innerHTML = content;
   }
 }
 
 const BerlinWeather = new Forecast("52.520008,13.404954");
+const LondonWeather = new Fore();

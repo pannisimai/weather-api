@@ -91,9 +91,91 @@
   !*** ./src/assets/js/index.js ***!
   \********************************/
 /*! no exports provided */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/deci-pc-ubuntu54/Development/JS/weather-api/src/assets/js/index.js: Unexpected token, expected \",\" (25:21)\n\n\u001b[0m \u001b[90m 23 | \u001b[39m    let container \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelector(\u001b[32m\".card-deck\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m    \u001b[36mconst\u001b[39m {summary} \u001b[33m=\u001b[39m currently\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 | \u001b[39m    \u001b[36mconst\u001b[39m { currently[summary]\u001b[33m,\u001b[39m } \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdata\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 | \u001b[39m  }\u001b[0m\n\u001b[0m \u001b[90m 27 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 28 | \u001b[39m\u001b[0m\n    at Parser.raise (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:3851:17)\n    at Parser.unexpected (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:5165:16)\n    at Parser.expect (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:5151:28)\n    at Parser.parseObj (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:6639:14)\n    at Parser.parseBindingAtom (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:5447:21)\n    at Parser.parseVarId (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7976:20)\n    at Parser.parseVar (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7948:12)\n    at Parser.parseVarStatement (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7773:10)\n    at Parser.parseStatementContent (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7360:21)\n    at Parser.parseStatement (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7293:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7879:25)\n    at Parser.parseBlockBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7866:10)\n    at Parser.parseBlock (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7850:10)\n    at Parser.parseFunctionBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:6911:24)\n    at Parser.parseFunctionBodyAndFinish (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:6881:10)\n    at Parser.parseMethod (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:6837:10)\n    at Parser.pushClassMethod (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8272:30)\n    at Parser.parseClassMemberWithIsStatic (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8197:12)\n    at Parser.parseClassMember (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8136:10)\n    at withTopicForbiddingContext (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8091:14)\n    at Parser.withTopicForbiddingContext (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7187:14)\n    at Parser.parseClassBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8068:10)\n    at Parser.parseClass (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8042:22)\n    at Parser.parseStatementContent (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7335:21)\n    at Parser.parseStatement (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7293:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7879:25)\n    at Parser.parseBlockBody (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7866:10)\n    at Parser.parseTopLevel (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:7222:10)\n    at Parser.parse (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:8871:17)\n    at parse (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/parser/lib/index.js:11133:38)\n    at parser (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/home/deci-pc-ubuntu54/Development/JS/weather-api/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @scss/styles.scss */ "./src/assets/scss/styles.scss");
+/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Forecast =
+/*#__PURE__*/
+function () {
+  function Forecast(latitude, longitude) {
+    _classCallCheck(this, Forecast);
+
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.render();
+  }
+
+  _createClass(Forecast, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var ApiUrl = "https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954";
+      fetch(ApiUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this.data = data;
+        console.log(_this.data);
+
+        _this.print(data);
+      }).catch(function (err) {
+        return console.log("oh no!! ".concat(err));
+      });
+    }
+  }, {
+    key: "print",
+    value: function print() {
+      //cards
+      var container = document.querySelector("#budapest");
+      var description = document.querySelector(".lead");
+      var _this$data = this.data,
+          currently = _this$data.currently,
+          daily = _this$data.daily;
+      var currentlySummary = currently.summary,
+          currentlyIcon = currently.icon,
+          temperature = currently.temperature,
+          windSpeed = currently.windSpeed;
+      var dailySummary = daily.summary,
+          dailyIcon = daily.icon,
+          data = daily.data;
+      var summary = data.summary,
+          icon = data.icon,
+          sunriseTime = data.sunriseTime,
+          sunsetTime = data.sunsetTime,
+          moonPhase = data.moonPhase;
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(currentlyIcon, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
+      var cards = "<p></p>";
+      description.innerHTML = content;
+    }
+  }]);
+
+  return Forecast;
+}();
+
+var BerlinWeather = new Forecast("52.520008,13.404954");
+var LondonWeather = new Fore();
+
+/***/ }),
+
+/***/ "./src/assets/scss/styles.scss":
+/*!*************************************!*\
+  !*** ./src/assets/scss/styles.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 
