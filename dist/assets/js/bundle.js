@@ -121,7 +121,7 @@ function () {
     value: function render() {
       var _this = this;
 
-      var ApiUrl = "https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954";
+      var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954?units=si";
       fetch(ApiUrl).then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -132,6 +132,51 @@ function () {
       }).catch(function (err) {
         return console.log("oh no!! ".concat(err));
       });
+    }
+  }, {
+    key: "icons",
+    value: function icons(currentlyIcon) {
+      switch (currentlyIcon) {
+        case "snow":
+          return "<i class=\"icon fas fa-snowman\"></i>";
+          break;
+
+        case "clear-day":
+          return "<i class=\"icon fas fa-sun\"></i>";
+          break;
+
+        case "clear-night":
+          return "<i class=\"icon fas fa-moon\"></i>";
+          break;
+
+        case "rain":
+          return "<i class=\"icon fas fa-cloud-showers-heavy\"></i>";
+          break;
+
+        case "sleet":
+          return "<i class=\"icon fas fa-snowflake\"></i>";
+          break;
+
+        case "wind":
+          return "<i class=\"icon fas fa-wind\"></i> ";
+          break;
+
+        case "fog":
+          return "<i class=\"icon fas fa-smog\"></i>";
+          break;
+
+        case "cloudy":
+          return "<i class=\"icon fas fa-cloud\"></i>";
+          break;
+
+        case "partly-cloudy-day":
+          return "<i class=\"icon fas fa-cloud-sun\"></i>";
+          break;
+
+        case "partly-cloudy-night":
+          return "<i class=\"icon fas fa-wind\"></i>";
+          break;
+      }
     }
   }, {
     key: "print",
@@ -153,7 +198,7 @@ function () {
           sunriseTime = data.sunriseTime,
           sunsetTime = data.sunsetTime,
           moonPhase = data.moonPhase;
-      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    <h6>").concat(dailySummary, "</h6>\n    ");
+      var content = "\n    <div class=\"icon\">".concat(this.icons(currentlyIcon), "</div>\n    <p>").concat(currentlySummary, "</p>\n    <p class=\"temp\">").concat(temperature.toFixed(0), " \xB0C</p>\n    <h6>").concat(dailySummary, "</h6>\n    ");
       description.innerHTML = content;
     }
   }]);
@@ -161,7 +206,7 @@ function () {
   return Forecast;
 }();
 
-var BerlinWeather = new Forecast("52.520008,13.404954");
+var BerlinWeather = new Forecast("52.520008", "13.404954");
 
 var Forecast2 =
 /*#__PURE__*/
@@ -179,7 +224,7 @@ function () {
     value: function render() {
       var _this2 = this;
 
-      var ApiUrl = "https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
+      var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
       fetch(ApiUrl).then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -190,6 +235,51 @@ function () {
       }).catch(function (err) {
         return console.log("oh no!! ".concat(err));
       });
+    }
+  }, {
+    key: "icons",
+    value: function icons(currentlyIcon) {
+      switch (currentlyIcon) {
+        case "snow":
+          return "<i class=\"fas fa-snowman\"></i>";
+          break;
+
+        case "clear-day":
+          return "<i class=\"fas fa-sun\"></i>";
+          break;
+
+        case "clear-night":
+          return "<i class=\"fas fa-moon\"></i>";
+          break;
+
+        case "rain":
+          return "<i class=\"fas fa-cloud-showers-heavy\"></i>";
+          break;
+
+        case "sleet":
+          return "<i class=\"fas fa-snowflake\"></i>";
+          break;
+
+        case "wind":
+          return "<i class=\"fas fa-wind\"></i> ";
+          break;
+
+        case "fog":
+          return "<i class=\"fas fa-smog\"></i>";
+          break;
+
+        case "cloudy":
+          return "<i class=\"fas fa-cloud\"></i>";
+          break;
+
+        case "partly-cloudy-day":
+          return "<i class=\"fas fa-cloud-sun\"></i>";
+          break;
+
+        case "partly-cloudy-night":
+          return "<i class=\"fas fa-wind\"></i>";
+          break;
+      }
     }
   }, {
     key: "print",
@@ -211,7 +301,7 @@ function () {
           sunriseTime = data.sunriseTime,
           sunsetTime = data.sunsetTime,
           moonPhase = data.moonPhase;
-      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(currentlyIcon, "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(this.icons(currentlyIcon), "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
       description.innerHTML = content;
     }
   }]);
@@ -220,6 +310,212 @@ function () {
 }();
 
 var LondonWeather = new Forecast2("51.509865", "-0.118092");
+
+var Forecast3 =
+/*#__PURE__*/
+function () {
+  function Forecast3(latitude, longitude) {
+    _classCallCheck(this, Forecast3);
+
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.render();
+  }
+
+  _createClass(Forecast3, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
+      fetch(ApiUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this3.data = data;
+        console.log(_this3.data);
+
+        _this3.print(data);
+      }).catch(function (err) {
+        return console.log("oh no!! ".concat(err));
+      });
+    }
+  }, {
+    key: "icons",
+    value: function icons(currentlyIcon) {
+      switch (currentlyIcon) {
+        case "snow":
+          return "<i class=\"fas fa-snowman\"></i>";
+          break;
+
+        case "clear-day":
+          return "<i class=\"fas fa-sun\"></i>";
+          break;
+
+        case "clear-night":
+          return "<i class=\"fas fa-moon\"></i>";
+          break;
+
+        case "rain":
+          return "<i class=\"fas fa-cloud-showers-heavy\"></i>";
+          break;
+
+        case "sleet":
+          return "<i class=\"fas fa-snowflake\"></i>";
+          break;
+
+        case "wind":
+          return "<i class=\"fas fa-wind\"></i> ";
+          break;
+
+        case "fog":
+          return "<i class=\"fas fa-smog\"></i>";
+          break;
+
+        case "cloudy":
+          return "<i class=\"fas fa-cloud\"></i>";
+          break;
+
+        case "partly-cloudy-day":
+          return "<i class=\"fas fa-cloud-sun\"></i>";
+          break;
+
+        case "partly-cloudy-night":
+          return "<i class=\"fas fa-wind\"></i>";
+          break;
+      }
+    }
+  }, {
+    key: "print",
+    value: function print() {
+      //cards
+      var description = document.querySelector("#budapestcard");
+      var _this$data3 = this.data,
+          currently = _this$data3.currently,
+          daily = _this$data3.daily;
+      var currentlySummary = currently.summary,
+          currentlyIcon = currently.icon,
+          temperature = currently.temperature,
+          windSpeed = currently.windSpeed;
+      var dailySummary = daily.summary,
+          dailyIcon = daily.icon,
+          data = daily.data;
+      var summary = data.summary,
+          icon = data.icon,
+          sunriseTime = data.sunriseTime,
+          sunsetTime = data.sunsetTime,
+          moonPhase = data.moonPhase;
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(this.icons(currentlyIcon), "</p>\n    <p>").concat((5 / 9 * (temperature - 32)).toFixed(0), " \xB0C</p>\n    ");
+      description.innerHTML = content;
+    }
+  }]);
+
+  return Forecast3;
+}();
+
+var BudapestWeather = new Forecast3("47.4979", "19.0402");
+
+var Forecast4 =
+/*#__PURE__*/
+function () {
+  function Forecast4(latitude, longitude) {
+    _classCallCheck(this, Forecast4);
+
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.render();
+  }
+
+  _createClass(Forecast4, [{
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude, "?units=si");
+      fetch(ApiUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this4.data = data;
+        console.log(_this4.data);
+
+        _this4.print(data);
+      }).catch(function (err) {
+        return console.log("oh no!! ".concat(err));
+      });
+    }
+  }, {
+    key: "icons",
+    value: function icons(currentlyIcon) {
+      switch (currentlyIcon) {
+        case "snow":
+          return "<i class=\"fas fa-snowman\"></i>";
+          break;
+
+        case "clear-day":
+          return "<i class=\"fas fa-sun\"></i>";
+          break;
+
+        case "clear-night":
+          return "<i class=\"fas fa-moon\"></i>";
+          break;
+
+        case "rain":
+          return "<i class=\"fas fa-cloud-showers-heavy\"></i>";
+          break;
+
+        case "sleet":
+          return "<i class=\"fas fa-snowflake\"></i>";
+          break;
+
+        case "wind":
+          return "<i class=\"fas fa-wind\"></i> ";
+          break;
+
+        case "fog":
+          return "<i class=\"fas fa-smog\"></i>";
+          break;
+
+        case "cloudy":
+          return "<i class=\"fas fa-cloud\"></i>";
+          break;
+
+        case "partly-cloudy-day":
+          return "<i class=\"fas fa-cloud-sun\"></i>";
+          break;
+
+        case "partly-cloudy-night":
+          return "<i class=\"fas fa-wind\"></i>";
+          break;
+      }
+    }
+  }, {
+    key: "print",
+    value: function print() {
+      //cards
+      var description = document.querySelector("#lacard");
+      var _this$data4 = this.data,
+          currently = _this$data4.currently,
+          daily = _this$data4.daily;
+      var currentlySummary = currently.summary,
+          currentlyIcon = currently.icon,
+          temperature = currently.temperature,
+          windSpeed = currently.windSpeed;
+      var dailySummary = daily.summary,
+          dailyIcon = daily.icon,
+          data = daily.data;
+      var summary = data.summary,
+          icon = data.icon,
+          sunriseTime = data.sunriseTime,
+          sunsetTime = data.sunsetTime,
+          moonPhase = data.moonPhase;
+      var content = "<p>".concat(currentlySummary, "</p>\n    <p>").concat(this.icons(currentlyIcon), "</p>\n    <p>").concat(temperature.toFixed(0), " \xB0C</p>\n    ");
+      description.innerHTML = content;
+    }
+  }]);
+
+  return Forecast4;
+}();
+
+var LAWeather = new Forecast4("34.0522", "118.2437");
 
 /***/ }),
 

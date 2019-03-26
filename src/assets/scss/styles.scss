@@ -8,12 +8,31 @@ body {
 .pricing-header {
   background: white;
   margin-bottom: 50px;
-  width: 74vw;
+  width: 76vw;
   opacity: 0.6;
   border-radius: 5px;
 }
 
 .card-deck {
   margin: 0;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+.card {
+}
+
+.container {
+  width: 80vw;
+}
+
+.fas {
+  font-size: 40px;
+}
+
+.icon {
+  font-size: 60px;
+}
+
+.d-flex {
+  opacity: 0.9;
 }
