@@ -181,8 +181,11 @@ function () {
   }, {
     key: "print",
     value: function print() {
+      var _this2 = this;
+
       //cards
       var description = document.querySelector(".lead");
+      var dailyForecast = document.querySelector(".daily");
       var _this$data = this.data,
           currently = _this$data.currently,
           daily = _this$data.daily;
@@ -192,14 +195,24 @@ function () {
           windSpeed = currently.windSpeed;
       var dailySummary = daily.summary,
           dailyIcon = daily.icon,
-          data = daily.data;
-      var summary = data.summary,
-          icon = data.icon,
-          sunriseTime = data.sunriseTime,
-          sunsetTime = data.sunsetTime,
-          moonPhase = data.moonPhase;
+          data = daily.data; //get the weekdays
+
+      var dailyContent = data.slice(1).map(function (day) {
+        var summary = day.summary,
+            icon = day.icon,
+            sunriseTime = day.sunriseTime,
+            sunsetTime = day.sunsetTime,
+            moonPhase = day.moonPhase,
+            time = day.time,
+            temperatureHigh = day.temperatureHigh;
+        var date = new Date(time * 1000);
+        var weekday = date.getDay();
+        var weekdays = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        return "\n      <div class=\"day tomorrow\"><h4>".concat(weekdays[weekday], "</h4>\n      <div class=\"iconDaily\">").concat(_this2.icons(icon), "</div>\n      <p>").concat(summary, "</p>\n      <p class=\"temp\">").concat(temperatureHigh.toFixed(0), " \xB0C</p>\n      </div>\n      ");
+      }).join("");
       var content = "\n    <div class=\"icon\">".concat(this.icons(currentlyIcon), "</div>\n    <p>").concat(currentlySummary, "</p>\n    <p class=\"temp\">").concat(temperature.toFixed(0), " \xB0C</p>\n    <h6>").concat(dailySummary, "</h6>\n    ");
       description.innerHTML = content;
+      dailyForecast.innerHTML = dailyContent;
     }
   }]);
 
@@ -222,16 +235,16 @@ function () {
   _createClass(Forecast2, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
       fetch(ApiUrl).then(function (response) {
         return response.json();
       }).then(function (data) {
-        _this2.data = data;
-        console.log(_this2.data);
+        _this3.data = data;
+        console.log(_this3.data);
 
-        _this2.print(data);
+        _this3.print(data);
       }).catch(function (err) {
         return console.log("oh no!! ".concat(err));
       });
@@ -325,16 +338,16 @@ function () {
   _createClass(Forecast3, [{
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude);
       fetch(ApiUrl).then(function (response) {
         return response.json();
       }).then(function (data) {
-        _this3.data = data;
-        console.log(_this3.data);
+        _this4.data = data;
+        console.log(_this4.data);
 
-        _this3.print(data);
+        _this4.print(data);
       }).catch(function (err) {
         return console.log("oh no!! ".concat(err));
       });
@@ -428,16 +441,16 @@ function () {
   _createClass(Forecast4, [{
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var ApiUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/".concat(this.latitude, ",").concat(this.longitude, "?units=si");
       fetch(ApiUrl).then(function (response) {
         return response.json();
       }).then(function (data) {
-        _this4.data = data;
-        console.log(_this4.data);
+        _this5.data = data;
+        console.log(_this5.data);
 
-        _this4.print(data);
+        _this5.print(data);
       }).catch(function (err) {
         return console.log("oh no!! ".concat(err));
       });

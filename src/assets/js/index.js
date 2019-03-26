@@ -59,6 +59,7 @@ class Forecast {
     //cards
 
     let description = document.querySelector(".lead");
+    let dailyForecast = document.querySelector(".daily");
 
     const { currently, daily } = this.data;
     const {
@@ -68,7 +69,40 @@ class Forecast {
       windSpeed
     } = currently;
     const { summary: dailySummary, icon: dailyIcon, data } = daily;
-    const { summary, icon, sunriseTime, sunsetTime, moonPhase } = data;
+
+    //get the weekdays
+    const dailyContent = data
+      .slice(1)
+      .map(day => {
+        const {
+          summary,
+          icon,
+          sunriseTime,
+          sunsetTime,
+          moonPhase,
+          time,
+          temperatureHigh
+        } = day;
+        const date = new Date(time * 1000);
+        const weekday = date.getDay();
+        const weekdays = new Array(
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        );
+        return `
+      <div class="day tomorrow"><h4>${weekdays[weekday]}</h4>
+      <div class="iconDaily">${this.icons(icon)}</div>
+      <p>${summary}</p>
+      <p class="temp">${temperatureHigh.toFixed(0)} °C</p>
+      </div>
+      `;
+      })
+      .join("");
 
     const content = `
     <div class="icon">${this.icons(currentlyIcon)}</div>
@@ -78,6 +112,7 @@ class Forecast {
     `;
 
     description.innerHTML = content;
+    dailyForecast.innerHTML = dailyContent;
   }
 }
 

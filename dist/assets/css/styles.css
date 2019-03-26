@@ -7047,5 +7047,17 @@ body {
 .d-flex {
   opacity: 0.9; }
 
+.day {
+  width: 150px; }
+
+.daily {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px; }
+
+.iconDaily {
+  font-size: 40px; }
+
 
 /*# sourceMappingURL=styles.css.map*/
