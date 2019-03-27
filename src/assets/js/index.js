@@ -8,8 +8,12 @@ class Forecast {
   }
 
   render() {
-    const ApiUrl = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954?units=si`;
+    const ApiUrl = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/${
+      this.latitude
+    },${this.longitude}?units=si`;
 
+    //berlin
+    //https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954?units=si
     fetch(ApiUrl)
       .then(response => response.json())
       .then(data => {
@@ -116,7 +120,7 @@ class Forecast {
   }
 }
 
-const BerlinWeather = new Forecast("52.520008", "13.404954");
+const HerzeliyaWeather = new Forecast("32.1624", "34.8447");
 
 class Forecast2 {
   constructor(latitude, longitude) {
