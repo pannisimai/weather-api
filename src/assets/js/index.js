@@ -8,9 +8,7 @@ class Forecast {
   }
 
   render() {
-    const ApiUrl = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/${
-      this.latitude
-    },${this.longitude}?units=si`;
+    const ApiUrl = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954?units=si`;
 
     //berlin
     //https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4c6058309d7af063459dd16dc8b101b8/52.520008,13.404954?units=si
